@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Manu">
+    <title> Pagina costumi - 1</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet">
+	
+
+	<style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            background-image: url('asset/pattern-quadrat2i.png'); /* Percorso relativo all'immagine */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+			min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+
+    </style>
+
+	<style>
+
+/* Definizione dell'animazione */
+/* Definizione dell'animazione */
+@-webkit-keyframes slideDown {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applicazione dell'animazione */
+/* Applicazione dell'animazione */
+.image-to-animate {
+  -webkit-animation: slideDown 0.5s ease-out;
+  animation: slideDown 0.5s ease-out;
+}
+.productinfo h2{
+	color: #47413a;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: auto;
+}
+
+.productinfo p{
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: #696763;
+}
+
+/***************************
+******overplay prodotti*****
+****************************/
+.prodotto-overlay  h2{
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.prodotto-overlay-tre {
+  background: #5a5058;
+  background-image: url('css/three_star_pattern.png'); /* 3 stelle */
+  top: 0;
+  display: none;
+  height: 0;
+  position: absolute;
+  transition: height 500ms ease 0s;
+  width: 100%;
+  opacity: 100; /* Valore iniziale 0 */
+}
+
+.prodotto-overlay  {
+  background:#5a5058;
+  background-image: url('four_star_pattern.png'); /*prova*/
+  top: 0;
+  display: none;
+  height: 0;
+  position: absolute;
+  transition: height 500ms ease 0s;
+  width: 100%;
+  display: block;
+  opacity:100;
+}
+
+.singolo-è:hover .prodotto-overlay {
+  display:block;
+  height:100%;
+  opacity: 1;
+}
+
+
+.product-overlay .overlay-content {
+  bottom: 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.product-overlay-tre h2{
+	color: #fff;
+	font-family: 'Roboto', sans-serif;
+	font-size: 24px;
+	font-weight: 700;
+}
+
+.product-overlay-tre {
+  background: #5a5058;
+  background-image: url('css/three_star_pattern.png'); /* 3 stelle */
+  top: 0;
+  display: none;
+  height: 0;
+  position: absolute;
+  transition: height 500ms ease 0s;
+  width: 100%;
+  opacity: 100; /* Valore iniziale 0 */
+}
+
+
+	</style>
+
+</head><!--/head-->
+
+	
+		<div class="header-middle"><!--header-middle-->
+			<div class="container">
+				<div class="row">
+					<div style="text-align: center;">
+						<a href="#"><img src="asset/header-prova.png" alt="" /></a>
+					</div>
+					<div class="col-sm-4">
+							<a href="https://reincarnationarchiveita.altervista.org"><img src="asset/bird01.png" alt="" /></a> 
+						</div>
+					</div>
+					<div class="col-sm-8">
+					
+						<div class="shop-menu pull-right">
+							<ul class="nav navbar-nav">
+			<li><a href="#" class="hover-text">la bambina/il mostro</a></li>
+            <li><a href="#" class="hover-text">sole/luna</a></li>
+            <li><a href="#" class="hover-text">persone/mondo</a></li>
+            <li><a href="#" class="hover-text">Youtube</a></li>
+            <li><a href="#" class="hover-text">About us</a></li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-middle-->
+	
+		<div class="header-bottom"><!--header-bottom-->
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-9">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								
+							</button>
+						</div>
+						<div class="mainmenu pull-left">
+							<ul class="nav navbar-nav collapse navbar-collapse">
+								<li><a href="https://reincarnationarchiveita.altervista.org" class="hover-text">Home</a></li>
+								<li class="dropdown"><a href="#">Ricerca per personaggio<i class="fa fa-angle-down"></i></a>
+                                    <ul role="menu" class="sub-menu">
+										<li>      
+										<a href="#">
+											2B
+											<img src="asset/costumi/2B/2B icon.png" alt="2B" class="personaggio-img">
+										</a>
+									</li>
+										<li>       
+											<a href="#">
+											9S
+											<img src="asset/costumi/9S/9S icon.png" alt="9S" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											A2
+											<img src="asset/costumi/A2/A2 icon.png" alt="A2" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											Leviana
+											<img src="asset/costumi/Levania/Leviania icon.png" alt="Leviana" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											Argo
+											<img src="asset/costumi/Argo/argo icon.png" alt="Argo" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											Dimos
+											<img src="asset/costumi/Dimos/dimos icon.png" alt="" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											Rion
+											<img src="asset/costumi/Rion/Rion icon.png" alt="Personaggio 1" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											Gayle
+											<img src="asset/costumi/Gayle/gayle icon.png" alt="Personaggio 1" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											A2
+											<img src="asset/costumi/A2/A2 icon.png" alt="Personaggio 1" class="personaggio-img">
+										</a></li> 
+										<li>       
+											<a href="#">
+											A2
+											<img src="asset/costumi/A2/A2 icon.png" alt="Personaggio 1" class="personaggio-img">
+										</a></li> 
+										<li><a href="#">Login</a></li> 
+                                    </ul>
+                                </li>
+								<li><a href="contact-us.html">Contatti</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-3">
+						<div class="search_box pull-right">
+							<input type="text" placeholder="Search"/>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!--/header-bottom-->
+	</header><!--/header-->
+	
+	<section id="slider"><!--slider-->
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-12">
+					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
+						
+						
+						
+					
+				</div>
+			</div>
+		</div>
+	</section><!--/slider-->
+	
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<div class="left-sidebar">
+		 				<h2>Categorie</h2>
+						<div class="panel-group category-products" id="accordian">     
+							<div class="panel panel-default">
+								<div class="panel-heading">
+								</div>
+								<div id="sportswear" class="panel-collapse collapse">
+									<div class="panel-body">
+									</div>
+								</div>
+							</div>
+							<div class="panel panel-default">
+								
+								<div class="panel-collapse collapse">
+								
+									<div class="panel-body">
+							
+									</div>
+								</div>
+							</div>
+							
+							<div class="panel panel-default">
+							<div class="panel-heading">
+									<h4 class="panel-title">
+									</h4>
+								</div>
+								<div class="panel-collapse collapse">
+									<div class="panel-body">
+										<ul class="nav nav-pills nav-justified">
+						
+										</ul>
+									</div>
+								</div>
+							</div>
+								<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Spade</a></h4>
+									<a href="#"><img src="#" alt="" /></a> 
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Spadoni</a></h4>
+									<a href="#"><img src="#" alt="" /></a> 
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Lance</a></h4>
+									<a href="#"><img src="#" alt="" /></a> 
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#">Pungni</a></h4>
+									<a href="#"><img src="#" alt="" /></a> 
+
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#"> Bastoni </a></h4>
+									<a href="#"><img src="#" alt="" /></a> 
+								</div>
+							</div>
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<h4 class="panel-title"><a href="#"> Pistole</a></h4>
+									<a href="#"><img src="#" alt="" /></a> 
+								</div>
+							</div>
+						</div> 
+					</div>
+				</div>
+				
+				<div class="col-sm-9 padding-right">
+					<div class="features_items"><!--features_items-->
+						<h2>Tutti i costumi</h2>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								
+								<div class="singoloProdotto">
+										<div class="productinfo text-center">
+											<img src="asset/costumi/2B/PRAYING BATTLER(1).png" alt="" />
+										
+											<h2>Praying Battler</h2>
+											<a href="#"></i></a>
+										</div>
+										<div class="product-overlay-tre">
+											<div class="overlay-content">
+											
+												<h2>Praying Battler</h2>
+												<a href="#"> </a>
+											</div>
+										</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+						
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/costumi/2B/SHATTERED BATTLER 142 x 128.png" alt="" />
+										
+										<h2>Shattered Batteler</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Shattered Batteler</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/costumi/2B/DIVERGENT BATTLER 142x128.png" alt="" />
+									
+										<h2>Divergent Battler<h2>
+										
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+										
+										<h2>Divergent Battler<h2>
+					
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/costumi/2B/alternative battler 142x128.png" alt="" />
+										
+										<h2>Alternate Battler</h2>
+										<!--<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
+									</div>
+									<div class="product-overlay">
+									
+										<div class="overlay-content">
+										
+											<h2>Alternate Battler</h2>
+										<!--	<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a> -->
+										</div>
+									</div>
+								
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+	
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/costumi/9S/ISOLATED SCANNER 142 x 128.png" alt="" />
+										
+										<h2>Isolated Scanner</h2>
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+										
+											<h2>Isolated Scanner<h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+									
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/costumi/9S/DIVERGENT SCANNER142 x 128.png" alt="" />
+										<h2>Divergent Scanner</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+										
+											<h2>Divergent Scanner</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+										
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="product-image-wrapper">
+								<div class="single-products">
+									<div class="productinfo text-center">
+										<img src="asset/Nier-Automata-2B bored.jpg" alt="" />
+										
+										<h2>Tratttato virtuoso</h2>
+
+									</div>
+									<div class="product-overlay">
+										<div class="overlay-content">
+											<a href="#" > </a>
+											<h2>Tratttato virtuoso</h2>
+											
+										</div>
+									</div>
+								</div>
+								<div class="choose">
+									<ul class="nav nav-pills nav-justified">
+
+									</ul>
+								</div>
+							</div>
+						</div>
+					
+						
+					</div><!--features_items-->
+				<!--	
+				<div class="category-tab">
+						<div class="col-sm-12">
+							<ul class="nav nav-tabs">
+								<li class="active"><a href="#tshirt" data-toggle="tab">PS5</a></li>
+								<li><a href="#blazers" data-toggle="tab">PS4</a></li>
+								<li><a href="#sunglass" data-toggle="tab">Nintendo Switch</a></li>
+								<li><a href="#kids" data-toggle="tab">Xbox s</a></li>
+								<li><a href="#poloshirt" data-toggle="tab">Polo shirt</a></li>
+							</ul>
+						</div>
+						barra per cambiare categoria, per adesso l'ho messa come commento
+					
+
+		
+	</footer/Footer-->
+	
+	<div style="text-align: center;">
+		<a href="#"><img src="asset/arrow-right.png" alt="" /></a>
+	</div>
+  
+    <script src="js/jquery.js"></script>
+	<script src="js/price-range.js"></script>
+    <script src="js/jquery.scrollUp.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.prettyPhoto.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
