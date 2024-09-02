@@ -7,7 +7,9 @@
     <title> Pagina costumi - 1</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
+<style>
 	
+</style>
 
 	<style>
         body {
@@ -20,10 +22,107 @@
 			min-height: 100vh;
             margin: 0;
             padding: 0;
-        }
-
-
+        }	
     </style>
+<style>
+	/* Stile per la barra principale */
+	.barra {
+  background-color: #312C2A;
+  height: 50px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: top 0.3s; /* Transizione dolce per il nascondimento */
+}
+
+.barra .nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.barra .nav li {
+  position: relative;
+  margin-right: 20px;
+}
+
+.barra .nav li:last-child {
+  margin-right: 0;
+}
+
+.barra .nav a {
+  color: #BDA699;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.barra .nav a:hover {
+  background-color: #BDA699;
+  text-decoration: underline;
+  color: #47413a;
+}
+
+.sotto-menu {
+  position: absolute;
+  top: 100%; /* Posiziona il menu sotto l'elemento di menu principale */
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 220px;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  display: none;
+  z-index: 999;
+  opacity: 0; /* Inizialmente nascosto */
+  animation: fadeInUp 400ms; /* Applica l'animazione */
+}
+
+.barra .nav li:hover .sotto-menu {
+  display: block;
+  opacity: 1; /* Mostra il menu al passaggio del mouse */
+}
+
+.sotto-menu li {
+  padding: 10px 20px;
+}
+
+.sotto-menu li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sotto-menu li a:hover {
+  color: #dd5efd;
+}
+
+.menu-image {
+  max-width: 100%; /* Assicurati che l'immagine non esca dal contenitore */
+  height: auto;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+</style>
 
 	<style>
 
@@ -141,12 +240,9 @@
   width: 100%;
   opacity: 100; /* Valore iniziale 0 */
 }
-
-
 	</style>
-
 </head><!--/head-->
-
+<body>
 	
 		<div class="header-middle"><!--header-middle-->
 			<div class="container">
@@ -160,20 +256,72 @@
 					</div>
 					<div class="col-sm-8">
 					
-						<div class="shop-menu pull-right">
-							<ul class="nav navbar-nav">
-			<li><a href="#" class="hover-text">la bambina/il mostro</a></li>
-            <li><a href="#" class="hover-text">sole/luna</a></li>
-            <li><a href="#" class="hover-text">persone/mondo</a></li>
-            <li><a href="#" class="hover-text">Youtube</a></li>
-            <li><a href="#" class="hover-text">About us</a></li>
-
+						<div class="barra">
+							<ul class="nav">
+								<!-- Primo elemento del menu -->
+								<li class="dropdown">
+									<a href="#">Bambina/Mostro</a>
+									<ul class="sotto-menu">
+										<li>
+											<a href="#">
+												<img src="asset/atto 1 bambina_mostro.png" alt="Atto 1" class="menu-image">
+												Atto 1 - Bambina/Mostro
+											</a>
+										</li>
+									</ul>
+								</li>
+								
+								<!-- Secondo elemento del menu -->
+								<li class="dropdown">
+									<a href="#">Sole/Luna</a>
+									<ul class="sotto-menu">
+										<li>
+											<a href="#">
+												<img src="asset/atto 2 sole-luna.png" alt="Atto 2" class="menu-image">
+												Atto 2 - Sole/Luna
+											</a>
+										</li>
+									</ul>
+								</li>
+					
+								<!-- Terzo elemento del menu -->
+								<li class="dropdown">
+									<a href="#">Persone/Mondo</a>
+									<ul class="sotto-menu">
+										<li>
+											<a href="#">
+												<img src="asset/atto 3 persone-mondo.png" alt="Atto 3" class="menu-image">
+												Atto 3 - Persone/Mondo
+											</a>
+										</li>
+									</ul>
+								</li>
 							</ul>
 						</div>
-					</div>
+						  
+					
 				</div>
 			</div>
-		</div><!--/header-middle-->
+		</div>
+		<script>
+			let lastScrollTop = 0;
+			const barra = document.querySelector('.barra');
+		  
+			window.addEventListener('scroll', function() {
+			  const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+		  
+			  if (currentScroll > lastScrollTop) {
+				// Scorrendo verso il basso
+				barra.style.top = '-50px'; // Nascondi la barra (larghezza della barra + padding)
+			  } else {
+				// Scorrendo verso l'alto
+				barra.style.top = '0'; // Mostra la barra
+			  }
+			  
+			  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Per evitare scroll negativi
+			});
+		  </script>
+		  <!--/header-middle-->
 	
 		<div class="header-bottom"><!--header-bottom-->
 			<div class="container">
@@ -386,89 +534,259 @@
 			<div class="row">
 				<div class="col-sm-12">
 					<div id="slider-carousel" class="carousel slide" data-ride="carousel">
-						
-						
-						
+			
 					
 				</div>
 			</div>
 		</div>
 	</section><!--/slider-->
+	<style>
+
+    /* Default panel styles */
+    .panel-default {
+        background-color: #616161; /* Initial background color */
+        border: 1px solid #616161;
+        padding: 10px;
+        margin-bottom: 10px;
+        color: #BDA699; /* Default text color */
+    }
+
+    /* Ensure all text inside the panel is the correct color */
+    .panel-default, 
+    .panel-default h4, 
+    .panel-default a, 
+    .panel-default p, 
+    .panel-default span {
+        color: #BDA699; /* Light text color */
+    }
+
+    /* Specific style for links inside the panel */
+    .panel-default .panel-title a {
+        color: #BDA699; /* Link color */
+        text-decoration: none; /* Remove underline from links */
+    }
+
+    /* Hover effect on the panel */
+    .panel-default:hover {
+        background-color: #BDA699; /* Slightly lighter background on hover */
+        transition: background-color 0.3s ease;
+    }
+
+    /* Text color change on hover */
+    .panel-default:hover, 
+    .panel-default:hover h4, 
+    .panel-default:hover a, 
+    .panel-default:hover p, 
+    .panel-default:hover span {
+        color: #616161; /* Change text color to white on hover */
+    }
+
+    /* Hover effect specifically for links */
+    .panel-default .panel-title a:hover {
+        color: #616161; /* Change link color to white on hover */
+        text-decoration: underline; /* Optional: underline links on hover */
+    }
+
+    /* Additional styles if needed */
+    .panel-group {
+        margin-bottom: 20px;
+    }
+
+    .panel-heading {
+        padding: 0;
+        border: 0;
+    }
+
+    .panel-title {
+        font-size: 16px;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .panel-collapse {
+        padding: 10px;
+    }
+
+
+</style>
+
+	</style>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-3">
+				<div class="left-sidebar">
+					<h2>Altro</h2>
+					<div class="panel-group category-products" id="accordion">     
 	
-	<section>
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-3">
-					<div class="left-sidebar">
-						<h2>Categorie</h2>
-						<div class="panel-group category-products" id="accordian">     
-							<div class="panel panel-default">
-								
-								<div id="sportswear" class="panel-collapse collapse">
-								
-								</div>
+						<!-- Prima sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+										Storia principale
+									</a>
+								</h4>
 							</div>
-							<div class="panel panel-default">
-								<div class="panel-collapse collapse">
-								
-								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Storia principale</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-								<div class="panel-collapse collapse">
-									<h4 class="panel-title"><a href="#">Storia principale</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-							</div>
-							
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Storia principale</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Storie dei Personaggi</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Storie nascoste</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Pugni</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Bastoni</a></h4>
-									<a href="#"><img src="#" alt="" /></a> 
-								</div>
-							</div>
-							<div class="panel panel-default">
-								<div class="panel-heading">
-									<h4 class="panel-title"><a href="#">Pistole</a></h4>
+							<div id="collapse1" class="panel-collapse collapse">
+								<div class="panel-body">
 									<a href="#"><img src="#" alt="" /></a>
 								</div>
 							</div>
-						</div> 
+						</div>
+	
+						<!-- Seconda sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse2">
+										Storia dei Personaggi
+									</a>
+								</h4>
+							</div>
+							<div id="collapse2" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Terza sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse3">
+										Storie nascoste
+									</a>
+								</h4>
+							</div>
+							<div id="collapse3" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Quarta sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse4">
+										eventi
+									</a>
+								</h4>
+							</div>
+							<div id="collapse4" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Quinta sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse5">
+										personaggi evento 
+									</a>
+								</h4>
+							</div>
+							<div id="collapse5" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+	
+						<!-- Sesta sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+										armi
+									</a>
+								</h4>
+							</div>
+							<div id="collapse6" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						<!-- S sezione -->
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+										compagni
+									</a>
+								</h4>
+							</div>
+							<div id="collapse6" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+										memorie
+									</a>
+								</h4>
+							</div>
+							<div id="collapse6" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="panel-title">
+									<a data-toggle="collapse" data-parent="#accordion" href="#collapse6">
+										armi
+									</a>
+								</h4>
+							</div>
+							<div id="collapse6" class="panel-collapse collapse">
+								<div class="panel-body">
+									<a href="#"><img src="#" alt="" /></a>
+								</div>
+							</div>
+						</div>
 					</div>
-					<a href="https://reincarnationarchiveita.altervista.org/wp-content/uploads/minigame/FlyingMamaReplica.html"><img src="asset/flyingmama.png" alt="mimigioco" /></a>
-
-
-
+					
+					<div class="container">
+						<div class="row">
+						 <div class="pull-left"></div>
+						
+							<!-- Sidebar -->
+							<div class="col-sm-3">
+								<div class="left-sidebar">
+									
+									<h2>MIMIGAME</h2>
+									<!-- Link al minigioco con immagine -->
+									 <div class="center">
+									<a href="https://reincarnationarchiveita.altervista.org/wp-content/uploads/minigame/FlyingMamaReplica.html">
+										<img src="asset/flyingmama.png" alt="minigioco" class="img-responsive" />
+						
+										<img src="asset/line.png"  class="center-image">
+									</a>
+								</div>
+							</div>
+						</div>
+					</div> 
 				</div>
-
+			</div>
+		</div>
+						
+			
+				
+				
+		
 				
 				
 				<div class="col-sm-9 padding-right">
@@ -837,8 +1155,9 @@
 							</div>
 						</div>
 					
-						
-					</div><!--features_items-->
+		
+			
+		<!--features_items-->
 				<!--	
 				<div class="category-tab">
 						<div class="col-sm-12">
